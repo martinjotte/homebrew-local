@@ -13,11 +13,6 @@ class Libsx < Formula
   depends_on "libxaw3dxft"
 
   patch do
-    url "file:///Users/otte/Library/homebrew/libsx/utf8.patch"
-    sha256 "efa75c1965c0dff2259193f7dbfeb70bfe08e23df1d62c21515d671aab147372"
-  end
-
-  patch do
     url "file:///Users/otte/Library/homebrew/libsx/libsx-rgb.diff"
     sha256 "7bcdbab14148106039fe89e40952459262991df4a8976cbfda261f4138e4c435"
   end
