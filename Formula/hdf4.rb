@@ -26,6 +26,8 @@ class Hdf4 < Formula
       "-DHDF4_BUILD_TOOLS=ON",
       "-DHDF4_BUILD_UTILS=ON",
       "-DHDF4_BUILD_FORTRAN=ON",
+      "-DHDF4_USE_GNU_DIRS:BOOL=ON",
+      "-DHDF4_INSTALL_CMAKE_DIR=lib/cmake/hdf4",
       "-DHDF4_BUILD_WITH_INSTALL_NAME=ON",
       "-DHDF4_ENABLE_JPEG_LIB_SUPPORT=ON",
       "-DHDF4_ENABLE_NETCDF=OFF", # Conflict. Just install NetCDF for this.
@@ -39,12 +41,7 @@ class Hdf4 < Formula
       system "make", "install"
     end
 
-    mkdir_p lib/"cmake"
-    mv prefix/"cmake", lib/"cmake/hdf4"
-
-    mv prefix/"share", prefix/"hdf4"
-    mkdir_p share
-    mv prefix/"hdf4", share/"hdf4"
+    rm prefix/"share/COPYING"
   end
 
   def caveats
