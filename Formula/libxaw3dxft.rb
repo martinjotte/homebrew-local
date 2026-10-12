@@ -8,6 +8,8 @@ class Libxaw3dxft < Formula
   depends_on "pkgconf" => :build
   depends_on "util-macros" => :build
   depends_on "libx11"
+  depends_on "freetype"
+  depends_on "fontconfig"
 
   patch do
     url "https://github.com/DaveFlater/libXaw3dXft/commit/5c37eae41fe976d4c2f33e238100cad4e37fffc4.patch?full_index=1"
